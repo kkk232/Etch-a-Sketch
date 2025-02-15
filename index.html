@@ -38,6 +38,7 @@
                     const selectline = document.querySelector(`#line${i}`);
                     const content = document.createElement("div");
                     content.classList.add("content");
+                    content.setAttribute("style", `height: ${960 / size}px; width: ${960 / size}px; display: flex;`)
                     content.addEventListener('mouseover', 
                     e => e.target.classList.add('my-colour-class')
                     )

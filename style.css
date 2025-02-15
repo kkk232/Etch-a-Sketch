@@ -1,15 +1,9 @@
-.content {
-    display: flex;
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
-}
+
 
 #container {
-    width: 700px;
-    height: 700px;
+    width: 960px;
+    height: 960px;
     display: flex;
-    flex-wrap: wrap;
 }
 .my-colour-class{
     background-color: black;
