@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="btn">Generate new grid</button>
+    <div id="container"></div>
+    <script>
+        
+        let size = 0;
+        const btn = document.querySelector("#btn");
+        btn.onclick = () => {
+            for(i = 0; i < size; i++){
+            const line = document.querySelector(`#line${i}`);
+            line.parentNode.removeChild(line);
+            }
+            
+            let check = true;
+            while(check == true){
+                size = prompt("Write the size of grid(not more than 100 and not less the 1)!");
+                if(size > 100){
+                    alert("I said not more than 100!!!");
+                }
+                else if (size <= 0) alert("I said not less the 1!!!");
+                else if (size > 0 && size <= 100) check = false;
+                else alert("Wtf is this? Write again!!!");
+            }
+            for (i = 0; i < size; i++){
+                const container = document.querySelector("#container");
+                const line = document.createElement("div");
+                line.setAttribute("id", `line${i}`);
+                container.appendChild(line)
+                    for (b = 0; b < size; b++){
+                    const selectline = document.querySelector(`#line${i}`);
+                    const content = document.createElement("div");
+                    content.classList.add("content");
+                    content.addEventListener('mouseover', 
+                    e => e.target.classList.add('my-colour-class')
+                    )
+                    selectline.appendChild(content);
+                    }
+            }
+        }
+        
+    </script>
+</body>
+</html>
